@@ -1,0 +1,7 @@
+[build]
+  base = "audio-canvas"
+  command = "npm run build"
+  publish = ".next"
+
+  [[plugins]]
+    package = "@netlify/plugin-next.js"
