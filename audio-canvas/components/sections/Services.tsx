@@ -2,19 +2,19 @@ import SectionBg from "@/components/sections/SectionBg";
 
 const services = [
     {
-        title: "Event Planning",
+        title: "Live Performance (In-door and Outdoor)",
         description:
-          "Whether producing a wedding, corporate function, funeral or divorcce party, we partner with clients to translate their vision into a thoughtfully designed and expertly executed experience.",
-    },
-    {
-        title: "Multitrack Recording",
-        description:
-          "Capture professional-quality recordings for your productions with our multitrack recording services. We also offer expert mixing and mastering to ensure your audio sounds polished, balanced, and ready for release or broadcast.",
+          "Professional live entertainment tailored for corporate and premium events. From executive functions and brand launches, to large-scale outdoor productions, we deliver expertly curated performances with seamless production and precision execution - designed to engage audiences, elevate brand presence, and leave a lasting impression.",
     },
     {
         title: "Broadcasting",
         description:
           "Professional live streaming for corporate events, sports, music performances, and memorial services. We handle full audio and video production to ensure high-quality visuals, clear sound, and seamless delivery to any audience.",
+    },
+     {
+        title: "Multitrack Recording",
+        description:
+          "Capture professional-quality recordings for your productions with our multitrack recording services. We also offer expert mixing and mastering to ensure your audio sounds polished, balanced, and ready for release or broadcast.",
     },
     {
         title: "Hybrid Meetings & Training Sessions",
@@ -25,7 +25,12 @@ const services = [
         title: "Audio-Visual Support Services for Churches & Schools",
         description:
           "We provide professional audio-visual support services tailored specifically for churches and schools, combining practical hands-on training with structured technical consultation. Services include volunteer training on existing and newly installed systems, system design and reconfiguration, upgrade planning, and expert fault finding and repairs. Optional Service Level Agreements (SLAs) are available to provide priority support and scheduled maintenance.",
-    }
+    },
+    {
+        title: "Event Planning",
+        description:
+          "Whether producing a wedding, corporate function, funeral or divorcce party, we partner with clients to translate their vision into a thoughtfully designed and expertly executed experience.",
+    } 
 ];
 
 export default function Services() {
