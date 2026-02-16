@@ -11,8 +11,8 @@ export default function Hero() {
                     </p>
 
                     <h1 className="mt-3 text-4xl font-semibold leading-tight text-slate-400 md:text-5xl">
-                        Sound, lighting & production that makes your event{" "}
-                        <span className="text-emerald-400">feel unforgettable</span>.
+                        Blending technical mastery with{" "}
+                        <span className="text-emerald-400">creative artistry</span>.
                     </h1>
 
                     <p className="mt-4 max-w-xl leading-relaxed text-slate-300">
@@ -33,14 +33,6 @@ export default function Hero() {
                         >
                             Explore Services
                         </a>
-                    </div>
-
-                    <div className="mt-6 flex flex-wrap gap-2 text-xs text-slate-300">
-                        {["Reliable setup & support", "Pro equipment", "Private & Corporate Events"].map((t) => (
-                            <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-slate-300">
-                                {t}
-                            </span>
-                        ))}
                     </div>
                 </div>
 

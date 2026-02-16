@@ -69,7 +69,23 @@ export default function Contact() {
 
                         <label className="mt-3 block text-xs text-slate-400">
                             Event Type
-                            <input name="type" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" placeholder="i.e. Wedding" />
+                            <select
+                              name="type"
+                              className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40"
+                            >
+                                <option value="">Select Event Type</option>
+                                <option>Conferences</option>
+                                <option>Corporate Events</option>
+                                <option>Hybrid Meetings and Training Sessions</option>
+                                <option>Live Performances (In-door & Outdoor)</option>
+                                <option>School Functions (Revue & Sports Days)</option>
+                                <option>Marketing Events</option>
+                                <option>Year-End Functions</option>
+                                <option>Private Events</option>
+                                <option>Birthday Parties</option>
+                                <option>Weddings</option>
+                                <option>Other</option>
+                            </select>
                         </label>
 
                         <label className="mt-3 block text-xs text-slate-400">
@@ -104,12 +120,6 @@ export default function Contact() {
                         <div className="flex items-center justify-between gap-4 px-4 py-4 text-sm">
                             <span className="text-xs tracking-[0.16em] text-slate-400">EMAIL</span>
                             <a className="font-semibold text-slate-300 hover:text-emerald-300" href="mailto:info@audiocanvas.co.za">info@audiocanvas.co.za</a>
-                        </div>
-                        <div className="flex items-center justify-between gap-4 px-4 py-4 text-sm">
-                            <span className="text-xs tracking-[0.16em] text-slate-400">WEBSITE</span>
-                            <a className="font-semibold text-slate-300 hover:text-emerald-300" href="https://audiocanvas.co.za" target="_blank" rel="noreferrer">
-                              audiocanvas.co.za
-                            </a>
                         </div>
                       </div>
 

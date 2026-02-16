@@ -1,16 +1,16 @@
 import SectionBg from "@/components/sections/SectionBg";
 
 const events = [
-    "Weddings",
-    "Birthdays",
-    "Corporate Events",
     "Conferences",
+    "Corporate Events",
+    "Hybrid Meetings and Training Sessions",
+    "Live Performances (In-door and Outdoor)",
+    "School Functions (Revue & Sports Days)",
     "Marketing Events",
-    "School Functions",
-    "Live Performances",
-    "Outdoor Events",
     "Year-End Functions",
-    "Special Events",
+    "Private Events",
+    "Birthday Parties",
+    "Weddings",
 ];
 
 export default function Events() {

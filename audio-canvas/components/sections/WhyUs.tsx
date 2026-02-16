@@ -9,9 +9,7 @@ export default function WhyUs() {
                 <div>
                     <h2 className="text-2xl font-semibold text-slate-400">Why Choose Audio Canvas</h2>
                     <p className="mt-2 max-w-3xl leading-relaxed text-slate-300">
-                        Whether you're planning an intimate celebration or a corporate production, Auddio Canvas offers
-                        unmatched technical proficiency, creative insight, and personalised service - enhancing the atmosphere
-                        and leaving a lasting impression.
+                        Whether you're planning an intimate celebration or corporate production, Audio Canvas offers unmatched technical proficiency, creative insight, and personalized service. Our goal is to make every sound and visual element work together harmoniously, enhancing the atmosphere and leaving a lasting impression on your audience.
                     </p>
 
                     <div className="mt-5 space-y-3">
@@ -35,8 +33,7 @@ export default function WhyUs() {
                 <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] p-5">
                   {[
                     { label: "Core Values", value: "Quality • Integrity • Innovation • Customer Focus" },
-                    { label: "Coverage", value: "Private • Corporate • Live" },
-                    { label: "Mission", value: "Elevate events through reliable AV excellence" },
+                    { label: "Mission", value: "Provide high-quality, innovative, and reliable audio-visual services that elevate events and experiences, while building long-lasting relationships through excellence and professionalism." },
                   ].map((s) => (
                     <div key={s.label} className="border-b border-white/10 py-4 last:border-b-0">
                         <div className="text-xs tracking-[0.16em] text-slate-400">{s.label.toUpperCase()}</div>

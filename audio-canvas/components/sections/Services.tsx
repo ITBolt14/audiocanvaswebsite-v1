@@ -2,21 +2,30 @@ import SectionBg from "@/components/sections/SectionBg";
 
 const services = [
     {
-        title: "Event Audio & Visual Support",
-        items: ["Live audio engineering", "Sound & playback setup", "Lighting support and event setup"],
+        title: "Event Planning",
+        description:
+          "Whether producing a wedding, corporate function, funeral or divorcce party, we partner with clients to translate their vision into a thoughtfully designed and expertly executed experience.",
     },
     {
-        title: "Recording & Editing",
-        items: ["Recording capture", "Editing and post-production", "Delivery-ready audio files"],
+        title: "Multitrack Recording",
+        description:
+          "Capture professional-quality recordings for your productions with our multitrack recording services. We also offer expert mixing and mastering to ensure your audio sounds polished, balanced, and ready for release or broadcast.",
     },
     {
-        title: "Consultation & System Design",
-        items: ["Sound system design", "Lighting system design", "AV installations & upgrades"],
+        title: "Broadcasting",
+        description:
+          "Professional live streaming for corporate events, sports, music performances, and memorial services. We handle full audio and video production to ensure high-quality visuals, clear sound, and seamless delivery to any audience.",
     },
     {
-        title: "Sales: Audio, Lighting & Cables",
-        items: ["Equipment guidance", "Compatible cabling solutions", "Setup support where needed"],
+        title: "Hybrid Meetings & Training Sessions",
+        description:
+          "We deliver reliable, high-quality hybrid meeting and training solutions that connectin-room and remote participants into one seamless experience. From executive meetings to company-wide training, we ensure clear communication, professional presentation, and stable technology - so your sessions run smoothly and your message is delivered with impact.",
     },
+    {
+        title: "Audio-Visual Support Services for Churches & Schools",
+        description:
+          "We provide professional audio-visual support services tailored specifically for churches and schools, combining practical hands-on training with structured technical consultation. Services include volunteer training on existing and newly installed systems, system design and reconfiguration, upgrade planning, and expert fault finding and repairs. Optional Service Level Agreements (SLAs) are available to provide priority support and scheduled maintenance.",
+    }
 ];
 
 export default function Services() {
@@ -30,21 +39,19 @@ export default function Services() {
                 </p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                {services.map((s) => (
-                    <article
-                      key={s.title}
-                      className="rounded-2xl border border-white/10 bg-black/10 backdrop-blur p-5 hover:border-emerald-400/80"
+            <div className="grid gap-6 md:grid-cols-2">
+                {services.map((service) => (
+                    <div
+                      key={service.title}
+                      className="rounded-2xl border border-white/10 bg-black/40 backdrop-blur p-6 hover:border-emerald-400/30"
                     >
-                        <h3 className="text-sm font-semibold text-slate-400">{s.title}</h3>
-                        <ul className="mt-3 space-y-2 text-sm text-slate-300">
-                            {s.items.map((i) => (
-                                <li key={i} className="list-disc pl-4 market:text-emerald-400/70">
-                                    {i}
-                                </li>
-                            ))}
-                        </ul>
-                    </article>
+                        <h3 className="text-lg font-semibold text-emerald-400">
+                            {service.title}
+                        </h3>
+                        <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                            {service.description}
+                        </p>
+                    </div>
                 ))}
             </div>
         </section>
