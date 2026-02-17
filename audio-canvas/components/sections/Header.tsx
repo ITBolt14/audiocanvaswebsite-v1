@@ -7,7 +7,7 @@ export default function Header() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="border-b border-white/10 bg-black/95 backdrop-blur">
+        <header className="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur">
             <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
                 <a href="#top" className="flex items-center gap-3" aria-label="Adio Canvas home" id="top">
                     <Image

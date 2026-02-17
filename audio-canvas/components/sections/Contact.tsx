@@ -1,40 +1,60 @@
 "use client";
 
 import React, { useState } from "react";
-import { setHeapSnapshotNearHeapLimit } from "v8";
 import SectionBg from "@/components/sections/SectionBg";
 
 export default function Contact() {
-    const [note, setNote] = useState("");
+    const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+    const [msg, setMsg] = useState("");
 
-    function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        setStatus("sending");
+        setMsg("");
+
         const form = e.currentTarget;
         const data = new FormData(form);
 
-        const name = String(data.get("name") || "").trim();
-        const email = String(data.get("email") || "").trim();
-        const phone = String(data.get("phone") || "").trim();
-        const date = String(data.get("date") || "").trim();
-        const type = String(data.get("type") || "").trim();
-        const message = String(data.get("message") || "").trim();
+        const payload = {
+            name: String(data.get("name") || "").trim(),
+            email: String(data.get("email") || "").trim(),
+            phone: String(data.get("phone") || "").trim(),
+            date: String(data.get("date") || "").trim(),
+            type: String(data.get("type") || "").trim(),
+            message: String(data.get("message") || "").trim(),
+            company: String(data.get("company") || "").trim(), // honeypot
+        };
 
-        const subject = encodeURIComponent(`Audio Canvas Website Enquiry - ${type || "Event"}`);
-        const body = encodeURIComponent(
-            `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nEvent Date: ${date}\nEvent Type: ${type}\n\nMessage:\n${message}\n`
-        );
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
 
-        window.location.href = `mailto:info@audiocanvas.co.za?subject=${subject}&body=${body}`;
-        setNote("Opening your email app... If it didn't open, please email info@audiocanvas.co.za directly.");
-        form.reset();
+            const json = await res.json().catch(() => ({}));
+
+            if (!res.ok || !json.ok) {
+                setStatus("error");
+                setMsg(json.error || "Something went wrong. Please try again.");
+                return;
+            }
+
+            setStatus("success");
+            setMsg("Thanks! Your message has been sent. We'll be in touch shortly.");
+            form.reset();
+        } catch {
+            setStatus("error");
+            setMsg("Network error. Please try again.");
+        }
     }
 
     return (
         <SectionBg id="contact" image="/sections/contact.jpg" overlay="medium" className="py-14">
-        <section id="contact" className="bg-white/[0.02] py-14">
+        <section id="contact" className="bg-white/[0.02] py-2">
             <div className="mx-auto max-w-6xl px-4">
                 <div className="mb-6">
-                    <h2 className="text-2xl font-semibold text-slate-400">Contact Us</h2>
+                    <h2 className="text-2xl font-semibold text-emerald-400">Contact Us</h2>
                     <p className="mt-2 max-w-3xl leading-relaxed text-slate-300">
                         Tell us about your event and we'll get back to you with a clear plan and next steps.
                     </p>
@@ -45,6 +65,14 @@ export default function Contact() {
                       onSubmit={onSubmit}
                       className="rounded-2xl border border-white/10 bg-white/[0.03] p-5"
                     >
+                        {/* Honeypot hidden */}
+                        <div className="hidden">
+                            <label>
+                                Company
+                                <input name="company" type="text" autoComplete="off" tabIndex={-1} />
+                            </label>
+                        </div>
+
                         <div className="grid gap-3 sm:grid-cols-2">
                             <label className="text-xs text-slate-400">
                                 Name
@@ -99,15 +127,28 @@ export default function Contact() {
                             />
                         </label>
 
-                        <button className="mt-4 w-full rounded-xl border border-emerald-400/50 bg-gradient-to-b from-emerald-400 to-emerlad-600 px-5 py-3 font-semibold text-[#07110b]">
-                          Send Message
+                        <button
+                          type="submit"
+                          disabled={status === "sending"}
+                          className="mt-4 w-full rounded-xl border border-emerald-400/50 bg-gradient-to-b from-emerald-400 to-emerald-600 px-5 py-3 font-semibold text-[#0711b0] disabled:opacity-60"
+                        >
+                            {status === "sending" ? "Sending..." : "Send Message"}
                         </button>
 
-                        {note && <p className="mt-3 text-sm text-slate-400">{note}</p>}
+                        {msg && (
+                        <p 
+                          className={`mt-3 text-sm ${
+                            status === "success" ? "text-emerald-300" : status === "error" ? "text-red-300" : "text-slate-300"
+                          }`}
+                          aria-live="polite"
+                        >
+                            {msg}
+                        </p>
+                    )}
                     </form>
 
                     <aside className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.02] p-5">
-                      <h3 className="text-lg font-semibold text-slate-400">Direct Contact</h3>
+                      <h3 className="text-lg font-semibold text-emerald-400">Direct Contact</h3>
                       <p className="mt-2 text-sm leading-relaxed text-slate-300">
                         Prefer to reach out directly? Use the details below.
                       </p>
@@ -123,7 +164,7 @@ export default function Contact() {
                         </div>
                       </div>
 
-                      <p className="mt-4 text-sm text-slate-400">
+                      <p className="mt-4 text-sm text-emerald-400">
                         Audio Canvas (Pty) Ltd - Professional audio-visual solutions for events and venues.
                       </p>
                     </aside>

@@ -36,9 +36,9 @@ const services = [
 export default function Services() {
     return (
         <SectionBg id="services" image="/sections/services.jpg" overlay="medium" className="py-14">
-        <section id="services" className="mx-auto max-w-6xl px-4 py-14">
+        <section id="services" className="mx-auto max-w-6xl px-4 py-2">
             <div className="mb-6">
-                <h2 className="text-2xl font-semibold text-slate-300">Services</h2>
+                <h2 className="text-2xl font-semibold text-emerald-400">Services</h2>
                 <p className="mt-2 max-w-3xl leading-relaxed text-slate-300">
                     From planning to execution - we bring sound, lighting and visual elements together seamlessly.
                 </p>

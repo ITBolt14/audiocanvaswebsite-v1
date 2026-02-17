@@ -3,7 +3,7 @@ import SectionBg from "@/components/sections/SectionBg";
 export default function Hero() {
     return (
         <SectionBg image="/sections/hero.jpg" overlay="medium">
-        <section className="mx-auto max-w-6xl px-4 pb-8 pt-14">
+        <section className="mx-auto max-w-6xl px-4 pb-6 pt-10">
             <div className="grid items-center gap-10 md:grid-cols-2">
                 <div>
                     <p className="text-xs font-medium tracking-[0.18em] text-slate-400">
