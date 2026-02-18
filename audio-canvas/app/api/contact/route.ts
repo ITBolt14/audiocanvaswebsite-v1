@@ -52,8 +52,8 @@ export async function POST(req: Request) {
                 name,
                 email,
                 phone,
-                date,
-                type,
+                eventDate: date,
+                eventType: type,
                 message,
                 company: "", // enforce empty
                 source: "website",
