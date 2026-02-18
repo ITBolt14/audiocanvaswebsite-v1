@@ -4,8 +4,8 @@ type PayLoad = {
     name?: string;
     email?: string;
     phone?: string;
-    date?: string;
-    type?: string;
+    eventDate?: string;
+    eventType?: string;
     message?: string;
     company?: string; //honeypot
 };
@@ -26,8 +26,8 @@ export async function POST(req: Request) {
         const name = (body.name ?? "").trim();
         const email = (body.email ?? "").trim();
         const phone = (body.phone ?? "").trim();
-        const date = (body.type ?? "").trim();
-        const type = (body.type ?? "").trim();
+        const date = (body.eventDate ?? "").trim();
+        const type = (body.eventType ?? "").trim();
         const message = (body.message ?? "").trim();
 
         if (!name || !email || !message) {

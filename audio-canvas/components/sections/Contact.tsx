@@ -19,8 +19,8 @@ export default function Contact() {
             name: String(data.get("name") || "").trim(),
             email: String(data.get("email") || "").trim(),
             phone: String(data.get("phone") || "").trim(),
-            date: String(data.get("date") || "").trim(),
-            type: String(data.get("type") || "").trim(),
+            eventDate: String(data.get("eventDate") || "").trim(),
+            eventType: String(data.get("eventType") || "").trim(),
             message: String(data.get("message") || "").trim(),
             company: String(data.get("company") || "").trim(), // honeypot
         };
@@ -91,14 +91,14 @@ export default function Contact() {
                             </label>
                             <label className="text-xs text-slate-400">
                                 Event Date
-                                <input name="date" type="date" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" />
+                                <input name="eventDate" type="date" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" />
                             </label>
                         </div>
 
                         <label className="mt-3 block text-xs text-slate-400">
                             Event Type
                             <select
-                              name="type"
+                              name="eventType"
                               className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40"
                             >
                                 <option value="">Select Event Type</option>
