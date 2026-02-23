@@ -29,7 +29,7 @@ const services = [
     {
         title: "Event Planning",
         description:
-          "Whether producing a wedding, corporate function, funeral or divorcce party, we partner with clients to translate their vision into a thoughtfully designed and expertly executed experience.",
+          "Whether planning a wedding, corporate function, funeral or divorcce party, we partner with clients to translate their vision into a thoughtfully designed and expertly executed experience.",
     } 
 ];
 

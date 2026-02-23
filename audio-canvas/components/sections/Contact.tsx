@@ -56,7 +56,7 @@ export default function Contact() {
                 <div className="mb-6">
                     <h2 className="text-2xl font-semibold text-emerald-400">Contact Us</h2>
                     <p className="mt-2 max-w-3xl leading-relaxed text-slate-300">
-                        Tell us about your event and we'll get back to you with a clear plan and next steps.
+                        Tell us about your event and we will make it happen.
                     </p>
                 </div>
 
@@ -123,14 +123,14 @@ export default function Contact() {
                               name="message"
                               rows={5}
                               className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40"
-                              placeholder="Venue/area, guest count, and what you need (sound, lighting, AV, recording,m etc.)"
+                              placeholder="Venue/area, guest count, and what you need (sound, lighting, AV, recording etc.)"
                             />
                         </label>
 
                         <button
                           type="submit"
                           disabled={status === "sending"}
-                          className="mt-4 w-full rounded-xl border border-emerald-400/50 bg-gradient-to-b from-emerald-400 to-emerald-600 px-5 py-3 font-semibold text-[#0711b0] disabled:opacity-60"
+                          className="mt-4 w-full rounded-xl border border-emerald-400/50 bg-gradient-to-b from-emerald-400 to-emerald-600 px-5 py-3 font-semibold text-[#07110b] disabled:opacity-60"
                         >
                             {status === "sending" ? "Sending..." : "Send Message"}
                         </button>

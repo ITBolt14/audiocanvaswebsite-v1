@@ -21,7 +21,7 @@ export default function WhyUs() {
                         ].map((t) => (
                             <div
                               key={t}
-                              className="relative rounded-2xl border border-white/10 bg-black/10 py-3 pl-12 pr-4 text-sm text-slate-300"
+                              className="relative rounded-2xl py-3 pl-12 pr-4 text-sm text-slate-300"
                             >
                                 <span className="absolute left-4 top-3 h-5 w-5 rounded-lg border border-emerald-400/80 bg-emerald-400/45" />
                                 {t}

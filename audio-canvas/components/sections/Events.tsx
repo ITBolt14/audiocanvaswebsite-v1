@@ -1,16 +1,16 @@
 import SectionBg from "@/components/sections/SectionBg";
 
 const events = [
-    "Conferences",
-    "Corporate Events",
-    "Hybrid Meetings and Training Sessions",
-    "Live Performances (In-door and Outdoor)",
-    "School Functions (Revue & Sports Days)",
-    "Marketing Events",
-    "Year-End Functions",
-    "Private Events",
-    "Birthday Parties",
-    "Weddings",
+    "• Conferences",
+    "• Corporate Events",
+    "• Hybrid Meetings and Training Sessions",
+    "• Live Performances (In-door and Outdoor)",
+    "• School Functions (Revue & Sports Days)",
+    "• Marketing Events",
+    "• Year-End Functions",
+    "• Private Events",
+    "• Birthday Parties",
+    "• Weddings",
 ];
 
 export default function Events() {
@@ -29,7 +29,7 @@ export default function Events() {
                     {events.map((e) => (
                         <div
                           key={e}
-                          className="flex items-center justify-center rounded-xl border border-white/10 bg-black/10 backdrop-blur px-3 py-3 text-center text-sm text-slate-300 hover:border-emerald-400/80 hover:text-white"
+                          className="flex items-center justify-center px-2 py-2 text-center text-sm font-medium text-slate-300"
                         >
                             {e}
                         </div>
