@@ -1,5 +1,4 @@
 export type EventSlug =
-<<<<<<< HEAD
     | "conferences"
     | "corporate-events"
     | "hybrid-meetings-training-sessions"
@@ -10,27 +9,12 @@ export type EventSlug =
     | "private-events"
     | "birthday-parties"
     | "weddings";
-=======
-    "conferences"
-"corporate-events"
-"hybrid-meetings-training-sessions"
-"live-performances"
-"school-functions"
-"marketing-events"
-"year-end-functions"
-"private-events"
-"birthday-parties"
-"weddings";
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
 
 export type EventPage = {
     slug: EventSlug;
     title: string;
     subtitle: string;
-<<<<<<< HEAD
     image: string;
-=======
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
     overview: string;
     typicalRequirements: string[];
     whatWeProvide: string[];
@@ -42,10 +26,7 @@ export const events: EventPage[] = [
         slug: "conferences",
         title: "Conferences",
         subtitle: "Clear communication, professional presentation, and reliable technical delivery.",
-<<<<<<< HEAD
         image: "/events/events.jpg",
-=======
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
         overview:
             "Audio Canvas provides structured audio-visual solutions for conferences, ensuring consistent sound, clean visuals and stable technical execution throughout your programme. Our focus is clarity, reliability and a professional attendee experience.",
         typicalRequirements: [
@@ -71,10 +52,7 @@ export const events: EventPage[] = [
         slug: "corporate-events",
         title: "Corporate Events",
         subtitle: "Professional audio-visual execution that supports your message and brand.",
-<<<<<<< HEAD
         image: "/events/events.jpg",
-=======
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
         overview:
             "From formal functions to brand launches, Audio Canvas delivers dependable audio-visual solutions that enhance the atmosphere while maintaining a professional standard. We prioritise clear communication, stable technology and polished presentation.",
         typicalRequirements: [
@@ -100,10 +78,7 @@ export const events: EventPage[] = [
         slug: "hybrid-meetings-training-sessions",
         title: "Hybrid Meetings and Training Sessions",
         subtitle: "Seamless connection between in-room and remote participants.",
-<<<<<<< HEAD
         image: "/events/events.jpg",
-=======
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
         overview:
             "Audio Canvas provides stable hybrid solutions that connect in-room and remote participants into one unified experience. We ensure clear audio, professional video presentation and reliable platform integration so your session runs smoothly with minimal disruption.",
         typicalRequirements: [
@@ -129,10 +104,7 @@ export const events: EventPage[] = [
         slug: "live-performances",
         title: "Live Performances (In-door and Outdoor)",
         subtitle: "Balanced sound and reliable production for performers and audiences.",
-<<<<<<< HEAD
         image: "/events/events.jpg",
-=======
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
         overview:
             "We provide professional sound and production support for live performances in both indoor and outdoor environments. Our focus is balanced coverage, system stability and consistent sound quality that supports the performance and the audience experience.",
         typicalRequirements: [
@@ -158,10 +130,7 @@ export const events: EventPage[] = [
         slug: "school-functions",
         title: "School Functions (Revue & Sports Days)",
         subtitle: "Reliable audio solutions for announcements, performances and large audiences.",
-<<<<<<< HEAD
         image: "/events/events.jpg",
-=======
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
         overview:
             "Audio Canvas support school events with practical, reliable audio-visual solutions suited to the environment and audience size. We focus on clear announcements, stable playback and dependable operation for smooth programme flow.",
         typicalRequirements: [
@@ -187,10 +156,7 @@ export const events: EventPage[] = [
         slug: "marketing-events",
         title: "Marketing Events",
         subtitle: "Audio-visual support that enhances engagement and visibility.",
-<<<<<<< HEAD
         image: "/events/events.jpg",
-=======
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
         overview:
             "For activations and marketing events, Audio Canvas delivers professional audio-visual support designed to attract attention and support brand messaging. We focus on clarity, stability and presentation quality that matches your campaign objectives.",
         typicalRequirements: [
@@ -216,10 +182,7 @@ export const events: EventPage[] = [
         slug: "year-end-functions",
         title: "Year-End Functions",
         subtitle: "Professional sound and lighting that supports atmosphere and programme flow.",
-<<<<<<< HEAD
         image: "/events/events.jpg",
-=======
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
         overview:
             "Audio Canvas provides audio, lighting and production support for year-end functions, ensuring reliable system performance and a polished event atmosphere. We focus on clear communication, consistent playback and professional execution.",
         typicalRequirements: [
@@ -245,10 +208,7 @@ export const events: EventPage[] = [
         slug: "private-events",
         title: "Private Events",
         subtitle: "Reliable audio-visual support tailored to your venue and vision.",
-<<<<<<< HEAD
         image: "/events/events.jpg",
-=======
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
         overview:
             "Audio Canvas supports private events with a structured approach that blends technical mastery with practical execution. We deliver reliable audio-visual outcomes that enhance the atmosphere while keeping the experience smooth and well-managed.",
         typicalRequirements: [
@@ -274,10 +234,7 @@ export const events: EventPage[] = [
         slug: "birthday-parties",
         title: "Birthday Parties",
         subtitle: "Clean sound, reliable setup and a well-managed experience.",
-<<<<<<< HEAD
         image: "/events/events.jpg",
-=======
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
         overview:
             "We provide dependable sound and event support for birthday celebrations, focusing on clear music playback, stable operation and a professional setup that fits your venue. Our approach is practical, structured and aligned to your needs.",
         typicalRequirements: [
@@ -303,10 +260,7 @@ export const events: EventPage[] = [
         slug: "weddings",
         title: "Weddings",
         subtitle: "Professional audio-visual support for key moments and a seamless expereince.",
-<<<<<<< HEAD
         image: "/events/events.jpg",
-=======
->>>>>>> fc74ce7bf99b36b288df0699f37bdcfedc0bed48
         overview:
             "Audio Canvas supports weddings with reliable audio-visual solutions designed to ensure key moments are delivered clearly and professionally. From ceremonies to receptions, we focus on stability, clarity and a smooth experience for hosts and guests.",
         typicalRequirements: [
