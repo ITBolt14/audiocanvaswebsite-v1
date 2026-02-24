@@ -1,16 +1,17 @@
 import SectionBg from "@/components/sections/SectionBg";
+import Link from "next/link";
 
 const events = [
-    "• Conferences",
-    "• Corporate Events",
-    "• Hybrid Meetings and Training Sessions",
-    "• Live Performances (In-door and Outdoor)",
-    "• School Functions (Revue & Sports Days)",
-    "• Marketing Events",
-    "• Year-End Functions",
-    "• Private Events",
-    "• Birthday Parties",
-    "• Weddings",
+    { label: "• Conferences", slug: "conferences" },
+    { label: "• Corporate Events", slug: "corporate-events" },
+    { label: "• Hybrid Meetings and Training Sessions", slug: "hybrid-meetings-training-sessions" },
+    { label: "• Live Performances (In-door and Outdoor)", slug: "live-performances" },
+    { label: "• School Functions (Revue & Sports Days)", slug: "school-functions" },
+    { label: "• Marketing Events", slug: "marketing-events" },
+    { label: "• Year-End Functions", slug: "year-end-functions" },
+    { label: "• Private Events", slug: "private-events" },
+    { label: "• Birthday Parties", slug: "birthday-parties" },
+    { label: "• Weddings", slug: "weddings" },
 ];
 
 export default function Events() {
@@ -27,12 +28,13 @@ export default function Events() {
 
                 <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                     {events.map((e) => (
-                        <div
-                          key={e}
+                        <Link
+                          key={e.slug}
+                          href={`/events/${e.slug}`}
                           className="flex items-center justify-center px-2 py-2 text-center text-sm font-medium text-slate-300"
                         >
-                            {e}
-                        </div>
+                            {e.label}
+                        </Link>
                     ))}
                 </div>
             </div>

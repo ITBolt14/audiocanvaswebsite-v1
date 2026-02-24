@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
     title: "Audio Canvas | Where Vision Meets Vibration",
@@ -11,6 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en">
             <body className="min-h-screen bg-[#07090b] text-slate-100 antialiased">
                 {children}
+            <WhatsAppButton />
             </body>
         </html>
     );
