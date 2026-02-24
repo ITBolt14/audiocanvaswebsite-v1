@@ -24,7 +24,7 @@ export default async function EventPage({
             <div className="bg-[#07090b]/60">
               <EventHero title={event.title} subtitle={event.subtitle} />
 
-              <main className="ms-auto max-w-6xl px-4 py-10">
+              <main className="mx-auto max-w-6xl px-4 py-10">
                 <p className="max-2-3xl text-sm leading-relaxed text-slate-300">
                     {event.overview}
                 </p>
