@@ -1,7 +1,6 @@
 import Header from "../components/sections/Header";
 import Hero from "../components/sections/Hero";
 import Services from "../components/sections/Services";
-import Events from "../components/sections/Events";
 import WhyUs from "../components/sections/WhyUs";
 import Contact from "../components/sections/Contact";
 import Footer from "../components/sections/Footer";
@@ -28,7 +27,6 @@ export default function Home() {
             <main>
                 <Hero />
                 <Services />
-                <Events />
                 <WhyUs />
                 <Contact />
             </main>

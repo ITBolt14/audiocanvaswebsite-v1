@@ -25,12 +25,7 @@ const services = [
         title: "Audio-Visual Support Services for Churches & Schools",
         description:
           "We provide professional audio-visual support services tailored specifically for churches and schools, combining practical hands-on training with structured technical consultation. Services include volunteer training on existing and newly installed systems, system design and reconfiguration, upgrade planning, and expert fault finding and repairs. Optional Service Level Agreements (SLAs) are available to provide priority support and scheduled maintenance.",
-    },
-    {
-        title: "Event Planning",
-        description:
-          "Whether planning a wedding, corporate function, funeral or divorcce party, we partner with clients to translate their vision into a thoughtfully designed and expertly executed experience.",
-    } 
+    }
 ];
 
 export default function Services() {
@@ -39,8 +34,8 @@ export default function Services() {
         <section id="services" className="mx-auto max-w-6xl px-4 py-2">
             <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-emerald-400">Services</h2>
-                <p className="mt-2 max-w-3xl leading-relaxed text-slate-300">
-                    From planning to execution - we bring sound, lighting and visual elements together seamlessly.
+                <p className="mt-2 max-w-5xl leading-relaxed text-slate-300">
+                    From planning to execution - we offer seamless integration of sound, lighting and visual elements for an unforgettable experience.
                 </p>
             </div>
 

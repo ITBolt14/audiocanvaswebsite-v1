@@ -19,7 +19,14 @@ export default function Contact() {
             name: String(data.get("name") || "").trim(),
             email: String(data.get("email") || "").trim(),
             phone: String(data.get("phone") || "").trim(),
-            eventDate: String(data.get("eventDate") || "").trim(),
+
+            venue: String(data.get("venue") || "").trim(),
+            venueContactPerson: String(data.get("venueContactPerson") || "").trim(),
+            venueContactNumber: String(data.get("venueContactNumber") || "").trim(),
+
+            eventStart: String(data.get("eventStart") || "").trim(),
+            eventEnd: String(data.get("eventEnd") || "").trim(),
+
             eventType: String(data.get("eventType") || "").trim(),
             message: String(data.get("message") || "").trim(),
             company: String(data.get("company") || "").trim(), // honeypot
@@ -56,7 +63,7 @@ export default function Contact() {
                 <div className="mb-6">
                     <h2 className="text-2xl font-semibold text-emerald-400">Contact Us</h2>
                     <p className="mt-2 max-w-3xl leading-relaxed text-slate-300">
-                        Tell us about your event and we will make it happen.
+                        Name your expectation and we will bring it to life
                     </p>
                 </div>
 
@@ -73,45 +80,76 @@ export default function Contact() {
                             </label>
                         </div>
 
+                        {/* Row 1 */}
                         <div className="grid gap-3 sm:grid-cols-2">
                             <label className="text-xs text-slate-400">
                                 Name
                                 <input required name="name" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" placeholder="i.e. John Doe" />
                             </label>
+
                             <label className="text-xs text-slate-400">
                                 Email
                                 <input required name="email" type="email" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" placeholder="i.e. john@domain.com" />
                             </label>
                         </div>
 
+                        {/* Row 2 */}
                         <div className="mt-3 grid gap-3 sm:grid-cols-2">
                             <label className="text-xs text-slate-400">
-                                Phone
+                                Your Contact Number
                                 <input name="phone" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" placeholder="i.e. 0801234567" />
                             </label>
+
                             <label className="text-xs text-slate-400">
-                                Event Date
-                                <input name="eventDate" type="date" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" />
+                                Venue / Area of Event
+                                <input name="venue" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" placeholder="Please provide the name of the venue or the area the event is taking place." />
+                            </label>
+                        </div>
+
+                        {/* Row 3 */}
+                        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                            <label className="text-xs text-slate-400">
+                                Contact Person at Venue
+                                <input name="venueContactPerson" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" placeholder="Contact person name at the venue" />
+                            </label>
+
+                            <label className="text-xs text-slate-400">
+                                Venue Contact Number
+                                <input name="venueContactNumber" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" placeholder="Contact number of the venue" />
+                            </label>
+                        </div>
+
+                        {/* Row 4 */}
+                        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                            <label className="text-xs text-slate-400">
+                                Event Start Date & Time
+                                <input name="eventStrat" type="datetime-local" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" />
+                            </label>
+
+                            <label className="text-xs text-slate-400">
+                                Event End Date & Time
+                                <input name="eventEnd" type="datetime-local" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" />
                             </label>
                         </div>
 
                         <label className="mt-3 block text-xs text-slate-400">
-                            Event Type
+                            Event Type – a site inspection may be required
                             <select
                               name="eventType"
                               className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40"
                             >
                                 <option value="">Select Event Type</option>
+                                <option>Birthday parties</option>
+                                <option>Celebration of Life</option>
                                 <option>Conferences</option>
                                 <option>Corporate Events</option>
+                                <option>Engagements</option>
                                 <option>Hybrid Meetings and Training Sessions</option>
-                                <option>Live Performances (In-door & Outdoor)</option>
-                                <option>School Functions (Revue & Sports Days)</option>
+                                <option>Live Performances (Indoor & Outdoor)</option>
                                 <option>Marketing Events</option>
-                                <option>Year-End Functions</option>
-                                <option>Private Events</option>
-                                <option>Birthday Parties</option>
+                                <option>School Functions</option>
                                 <option>Weddings</option>
+                                <option>Year-End Functions</option>
                                 <option>Other</option>
                             </select>
                         </label>
@@ -123,7 +161,7 @@ export default function Contact() {
                               name="message"
                               rows={5}
                               className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40"
-                              placeholder="Venue/area, guest count, and what you need (sound, lighting, AV, recording etc.)"
+                              placeholder="Please share a brief description of what you’re hoping to achieve with this event or service. You’re welcome to include your vision, any specific requirements, technical needs, budget considerations, or important details about the people involved. If there are any challenges, preferences, or non negotiables we should keep in mind, feel free to mention those too — anything that helps us understand your needs better is appreciated."
                             />
                         </label>
 
@@ -160,7 +198,7 @@ export default function Contact() {
                         </div>
                         <div className="flex items-center justify-between gap-4 px-4 py-4 text-sm">
                             <span className="text-xs tracking-[0.16em] text-slate-400">EMAIL</span>
-                            <a className="font-semibold text-slate-300 hover:text-emerald-300" href="mailto:info@audiocanvas.co.za">info@audiocanvas.co.za</a>
+                            <a className="font-semibold text-slate-300 hover:text-emerald-300" href="mailto:chris@audiocanvas.co.za">info@audiocanvas.co.za</a>
                         </div>
                       </div>
 
