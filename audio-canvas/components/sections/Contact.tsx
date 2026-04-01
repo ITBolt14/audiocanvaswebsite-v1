@@ -123,7 +123,7 @@ export default function Contact() {
                         <div className="mt-3 grid gap-3 sm:grid-cols-2">
                             <label className="text-xs text-slate-400">
                                 Event Start Date & Time
-                                <input name="eventStrat" type="datetime-local" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" />
+                                <input name="eventStart" type="datetime-local" className="mt-2 w-full rounded-xl border border-white/10 bg-[#07090b]/60 px-3 py-3 text-sm text-slate-100 outline-none focus:border-emerald-400/40" />
                             </label>
 
                             <label className="text-xs text-slate-400">
