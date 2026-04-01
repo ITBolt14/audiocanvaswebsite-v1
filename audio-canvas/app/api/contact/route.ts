@@ -4,7 +4,11 @@ type PayLoad = {
     name?: string;
     email?: string;
     phone?: string;
-    eventDate?: string;
+    venue?: string;
+    venueContactPerson?: string;
+    venueContactNumber?: string;
+    eventStart?: string;
+    eventEnd?: string;
     eventType?: string;
     message?: string;
     company?: string; //honeypot
@@ -26,7 +30,11 @@ export async function POST(req: Request) {
         const name = (body.name ?? "").trim();
         const email = (body.email ?? "").trim();
         const phone = (body.phone ?? "").trim();
-        const date = (body.eventDate ?? "").trim();
+        const venue = (body.venue ?? "").trim();
+        const venueContactPerson = (body.venueContactPerson ?? "").trim();
+        const venueContactNumber = (body.venueContactNumber ?? "").trim();
+        const eventStart = (body.eventStart ?? "").trim();
+        const eventEnd = (body.eventEnd ?? "").trim();
         const type = (body.eventType ?? "").trim();
         const message = (body.message ?? "").trim();
 
@@ -52,7 +60,11 @@ export async function POST(req: Request) {
                 name,
                 email,
                 phone,
-                eventDate: date,
+                venue,
+                venueContactPerson,
+                venueContactNumber,
+                eventStart,
+                eventEnd,
                 eventType: type,
                 message,
                 company: "", // enforce empty
