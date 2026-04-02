@@ -198,7 +198,7 @@ export default function Contact() {
                         </div>
                         <div className="flex items-center justify-between gap-4 px-4 py-4 text-sm">
                             <span className="text-xs tracking-[0.16em] text-slate-400">EMAIL</span>
-                            <a className="font-semibold text-slate-300 hover:text-emerald-300" href="mailto:chris@audiocanvas.co.za">info@audiocanvas.co.za</a>
+                            <a className="font-semibold text-slate-300 hover:text-emerald-300" href="mailto:chris@audiocanvas.co.za">chris@audiocanvas.co.za</a>
                         </div>
                       </div>
 
