@@ -3,6 +3,16 @@
 import React, { useState } from "react";
 import SectionBg from "@/components/sections/SectionBg";
 
+function formatLocalDateTime(value: string) {
+    if (!value) return "";
+
+    const [datePart, timePart] = value.split("T");
+    if (!datePart || !timePart) return value;
+
+    const [year, month, day] = datePart.split("-");
+    return `${day}/${month}/${year} ${timePart}`;
+}
+
 export default function Contact() {
     const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
     const [msg, setMsg] = useState("");
@@ -24,8 +34,8 @@ export default function Contact() {
             venueContactPerson: String(data.get("venueContactPerson") || "").trim(),
             venueContactNumber: String(data.get("venueContactNumber") || "").trim(),
 
-            eventStart: String(data.get("eventStart") || "").trim(),
-            eventEnd: String(data.get("eventEnd") || "").trim(),
+            eventStart: formatLocalDateTime(String(data.get("eventStart") || "")),
+            eventEnd: formatLocalDateTime(String(data.get("eventEnd") || "")),
 
             eventType: String(data.get("eventType") || "").trim(),
             message: String(data.get("message") || "").trim(),

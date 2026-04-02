@@ -50,7 +50,7 @@ function ServiceCard({
     description: string;
 }) {
     return (
-        <div className="group relative h-[260px] overflow-hidden rounded-2xl border border-white/10">
+        <div className="group relative h-[260px] overflow-hidden rounded-2xl border border-slate-500/60 hover:border-emerald-400 transition-all duration-300">
             {/* Background image */}
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
@@ -60,7 +60,7 @@ function ServiceCard({
 
             {/* Front: title only */}
             <div className="absolute inset-0 flex items-center justify-center p-6 transition-opacity duration-300 group-hover:opacity-0">
-                <h3 className="text-center text-base font-semibold tracking-wide text-white md:text-lg">
+                <h3 className="text-center text-base font-semibold tracking-wide text-emerald-400 md:text-lg drop-shadow-[0_0_6px_rgba(16,185,129,0.5)]">
                     {title}
                 </h3>
             </div>
