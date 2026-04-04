@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import SectionBg from "@/components/sections/SectionBg";
 
 const services = [
@@ -40,7 +41,7 @@ const services = [
     }
 ];
 
-function ServiceCard({
+function DesktopServiceCard({
     title,
     image,
     description,
@@ -80,7 +81,60 @@ function ServiceCard({
     );
 }
 
+function MobileServiceCard({
+    title,
+    image,
+    description,
+    isOpen,
+    onToggle,
+}: {
+    title: string;
+    image: string;
+    description: string;
+    isOpen: boolean;
+    onToggle: () => void;
+}) {
+    return (
+        <button
+          type="button"
+          onClick={onToggle}
+          aria-expanded={isOpen}
+          className="relative h-[260px] w-full overflow-hidden rounded-2xl border border-slate-500/60 text-left shadow-[0_0_0_1px_rgba(148,163,184,0.2)] transition-all duration-300"
+        >
+            <div 
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url${image})` }}
+            />
+            <div className={`absolute inset-0 transition-all duration-300 ${isOpen ? "bg-black/80" : "bg-black/45"}`} />
+
+            {!isOpen ? (
+                <div className="absolute inset-0 flex items-center justify-center p-6">
+                    <h3 className="text-center text-base font-semibold tracking-wide text-emerald-400">
+                        {title}
+                    </h3>
+                </div>
+            ) : (
+                <div className="absolute inset-0 flex items-center justify-center p-6">
+                    <div className="text-center">
+                        <h3 className="mb-3 text-base font-semibold tracking-wide text-emerald-400">
+                            {title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-slate-200">
+                            {description}
+                        </p>
+                        <p className="mt-4 text-xs font-medium text-slate-400">
+                            Tap again to close
+                        </p>
+                    </div>
+                </div>
+            )}
+        </button>
+    );
+}
+
 export default function Services() {
+    const [openMobileId, setOpenMobileId] = useState<string | null>(null);
+
     return (
         <SectionBg
           id="services"
@@ -100,12 +154,12 @@ export default function Services() {
                 {/* Desktop / Tablet layout */}
                 <div className="hidden md:block">
                     <div className="grid grid-cols-2 gap-4">
-                        <ServiceCard
+                        <DesktopServiceCard
                           title={services[0].title}
                           image={services[0].image}
                           description={services[0].description}
                         />
-                        <ServiceCard
+                        <DesktopServiceCard
                           title={services[1].title}
                           image={services[1].image}
                           description={services[1].description}
@@ -113,12 +167,12 @@ export default function Services() {
                     </div>
 
                     <div className="mt-4 grid grid-cols-2 gap-4">
-                        <ServiceCard
+                        <DesktopServiceCard
                           title={services[2].title}
                           image={services[2].image}
                           description={services[2].description}
                         />
-                        <ServiceCard
+                        <DesktopServiceCard
                           title={services[3].title}
                           image={services[3].image}
                           description={services[3].description}
@@ -127,7 +181,7 @@ export default function Services() {
 
                     <div className="mt-4 flex justify-center">
                         <div className="w-full max-w-[calc(50%-0.5rem)] md:w-[calc(50%-0.5rem)]">
-                            <ServiceCard
+                            <DesktopServiceCard
                               title={services[4].title}
                               image={services[4].image}
                               description={services[4].description}
@@ -139,11 +193,17 @@ export default function Services() {
                 {/* Mobile stacked layout */}
                 <div className="grid gap-4 md:hidden">
                     {services.map((service) => (
-                        <ServiceCard
+                        <MobileServiceCard
                           key={service.title}
                           title={service.title}
                           image={service.image}
                           description={service.description}
+                          isOpen={openMobileId === service.id}
+                          onToggle={() =>
+                            setOpenMobileId((current) =>
+                              current === service.id ? null : service.id
+                            )
+                          }
                         />
                     ))}
                 </div>
